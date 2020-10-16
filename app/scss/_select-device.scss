@@ -1,0 +1,96 @@
+.select-model {
+   display: flex;
+   justify-content: space-between;
+   align-items: flex-start;
+   flex-wrap: wrap;
+   
+   &__wrapper {
+      display: flex;
+      max-width: 50%;
+      margin-bottom: 30px;
+   }
+   
+   &__title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: $bluetext;
+      display: inline-block;
+      position: relative;
+      margin-bottom: 20px;
+      line-height: 25px;
+      &::after {
+         display: block;
+         content: "";
+         height: 2px;
+         width: 100%;
+         background-color: $bluetext;
+         transition: width 0.4s ease-in-out;
+      }
+
+      &:focus:after,
+      &:hover:after {
+         width: 0%;
+      }
+   }
+   &__inner {
+      margin-left: 6%;
+      width: 450px;
+   }
+
+   &__item {
+      display: inline-block;
+      position: relative;
+      padding-right: 30px;
+      padding-bottom: 15px;
+      &::after {
+         content: "";
+         position: absolute;
+         width: 1px;
+         height: 20px;
+         background-color: $bluetext;
+         right: 12px;
+      }
+      
+   }
+   &__link {
+      display: inline-block;
+      color: $myblue;
+      font-weight: 300;
+      line-height: 20px;
+      &::after {
+         display: block;
+         content: "";
+         height: 1px;
+         width: 0%;
+         background-color: $myblue;
+         transition: width 0.4s ease-in-out;
+      }
+      &:focus:after,
+      &:hover:after {
+         width: 100%;
+      }
+   }
+}
+
+.last::after {
+   background-color: #fff;
+}
+
+.model-choose {
+   text-align: center;
+   font-size: 1.7rem;
+   font-weight: 700;
+   // line-height: 1.24;
+   text-transform: uppercase;
+   color: #2c2b3a;
+} 
+
+.model-text {
+   text-align: center;
+   color: $graytext;
+   font-weight: 100;
+   font-size: 1rem;
+   margin-bottom: 60px;
+}
+
+
