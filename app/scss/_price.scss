@@ -1,0 +1,66 @@
+.price__title {
+  background-color: #fcfafa;
+  padding: 30px;
+}
+
+.price {
+  margin-top: 40px;
+  &__item {
+    border: 1px dashed black;
+    border-radius: 15px;
+    padding: 10px;
+    margin-bottom: 15px;
+  }
+  &__item-wrapper {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    &:hover .price__img {
+      opacity: 1;
+    }
+    &:hover svg #bg_7_ {
+      fill: #0079FF;
+    }
+  }
+  &__item-title {
+    margin-left: 100px;
+    position: relative;
+    p {
+      font-size: 1.3rem;
+      color: $oldsiteblue;
+      line-height: 1px;
+    }
+    span {
+      font-size: 0.9rem;
+    }
+    // &::before {
+    //   content: "";
+    //   background-image: url(../img/icon-price/diagnos.svg);
+    //   width: 35px;
+    //   height: 35px;
+    //   position: absolute;
+    //   top: 13px;
+    //   left: -55px;
+    // }
+  }
+  &__img {
+    width: 35px;
+    position: absolute;
+    left: -50px;
+    top: 10px;
+    opacity: .2;
+  }
+  &__price {
+    margin-right: 100px;
+     p {
+       font-size: 1.3rem;
+       color: $oldsiteblue;
+       line-height: 1px;
+     }
+
+     span {
+       font-size: 0.9rem;
+     }
+  }
+}

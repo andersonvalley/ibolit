@@ -1,7 +1,27 @@
 header {
-   background: rgb(94, 27, 166);
-   background: linear-gradient(333deg, rgba(94, 27, 166, 1) 0%, rgba(138, 14, 39, 1) 100%);
+background: rgb(94, 27, 166);
+background: linear-gradient(333deg, rgb(89, 23, 159) 30%, rgb(152, 7, 87) 100%);
    width: 100%;
+   overflow: hidden;
+}
+
+.top-menu__link {
+   position: relative;
+   &::after {
+      content: '';
+      width: 0%;
+      height: 1px;
+      background-color: #fff;
+      position: absolute;
+      top: 32px;
+      left: 10px;
+      transition: width 0.4s ease-in-out;
+   }
+
+   &:focus:after,
+   &:hover:after {
+      width: 88%;
+   }
 }
 
 .header {
@@ -18,91 +38,49 @@ header {
       line-height: 20px;
       position: relative;
 
+      img {
+         width: 100px;
+      }
+
       span {
          font-weight: 700;
          color: $twitter;
       }
    }
-
+   &__top-menu {
+      
+      height: 20px;
+      width: 100%;
+      color: #fff;
+   }
+   &__top-menu-list {
+      display: flex;
+      justify-content: flex-end;
+      max-width: 1160px;
+      padding: 0 10px;
+      margin: 0 auto;
+   }
+   &__top-menu-list li a {
+      color: #fff;
+      display: inline-block;
+      margin-left: 10px;
+      font-size: 0.9rem;
+      padding: 10px;
+      
+   }
+   &__social-title {
+      color: #fff;
+      font-size: 1rem;
+      span {
+         font-size: 1.1rem;
+      }
+   }
+   
    &__logo {
       padding: 10px 0;
       display: flex;
       align-items: center;
-   }
-
-   &__metro {
       display: flex;
-      flex-direction: column;
-
-   }
-
-   &__metro-title {
-      position: relative;
-      color: #fff;
-      font-size: 1.1rem;
-      display: inline-block;
-      line-height: 20px;
-      padding-bottom: 10px;
-      font-weight: 700;
-      display: block;
-      &::after {
-         width: 75%;
-         height: 1px;
-         content: "";
-         display: block;
-         background-color: #fff;
-         transition: width 0.4s ease-in-out;
-      }
-
-      &:focus:after,
-      &:hover:after {
-         width: 0%;
-      }
-
-      &::before {
-         content: '';
-         position: absolute;
-         background-image: url(../img/icon/metro.svg);
-         width: 30px;
-         height: 30px;
-         left: -35px;
-         top: -3px;
-      }
-   }
-
-   &__metro-adress {
-      color: #fff;
-      font-weight: 300;
-      font-size: 0.95rem;
-   }
-
-   &__metro-map {
-      position: relative;
-      color: #fff;
-      font-weight: 300;
-      font-size: 0.9rem;
-      background: rgba(0, 0, 0, .1);
-      opacity: .5;
-      padding: 3px 15px;
-      margin-right: 8px;
-      margin-top: 10px;
-      border-radius: 20px;
-
-      &:hover {
-         opacity: 1;
-         transition: 0.1s ease-in-out;
-      }
-
-      &:before {
-         content: '';
-         background-image: url(../img/icon/route.svg);
-         width: 25px;
-         height: 25px;
-         position: absolute;
-         left: -30px;
-         top: -3px;
-         opacity: 1;
-      }
    }
 
    &__phone {
@@ -110,7 +88,9 @@ header {
       flex-direction: column;
       align-items: flex-end;
    }
-
+   &__phone-mobile {
+      display: none;
+   }
    &__phone-link {
       display: inline-block;
       color: #fff;
@@ -147,38 +127,6 @@ header {
       box-shadow: 0 -10px -10px -10px #000;
    }
 
-   &__social {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-direction: column;
-
-      span {
-         color: #fff;
-         font-size: 1.1rem;
-         display: inline-block;
-         line-height: 20px;
-         padding-bottom: 10px;
-         font-weight: 700;
-      }
-
-   }
-
-   &__social-link {
-      display: flex;
-
-      &>a img {
-         width: 35px;
-         height: 35px;
-         margin-left: 10px;
-
-         &:hover {
-            transform: scale(1.1);
-            transition: 0.1s ease-in-out;
-         }
-      }
-   }
-
    &__btn-link {
       margin-top: 3px;
       width: 231px;
@@ -187,26 +135,27 @@ header {
       position: relative;
       display: block;
       color: #fff;
-      overflow: hidden;
+      margin-right: 3px;
       span {
          position: absolute;
          font-size: 0.9rem;
          font-weight: 700;
-         left: 63px;
+         left: 68px;
          top: 3px;
       }
 
       svg {
-         position: absolute;
-         width: 100%;
+         position: relative;
          height: 100%;
          top: 6px;
-         left: 61px;  
+         left: 55px;  
+         transform: scale(1.2);
+         overflow: hidden;
       }
 
       path {
          stroke-width: 2;
-         stroke: $twitter;
+         stroke: $bluetext;
          fill: none;
          stroke-dasharray: 340;
          transition: 0.1s ease-in-out;
@@ -235,7 +184,51 @@ header {
    }
 }
 
+.header__metro {
+   color: #fff;
+   line-height: 15px;
+   position: relative;
+   
+   &::before {
+      content: '';
+      background-image: url(../img/icon/m.svg);
+      width: 24px;
+      height: 16px;
+      position: absolute;
+      left: -40px;
+      top: 15px;
+   }
+   &::after {
+      content: '';
+      width: 53%;
+      height: 1px;
+      background-color: #fff;
+      position: absolute;
+      top: 32px;
+      left: 2px;
+      transition: width 0.4s ease-in-out;
+   }
+
+   &:focus:after,
+   &:hover:after {
+      width: 0%;
+   }
+   p {
+      font-size: 0.9rem;
+      line-height: 15px;
+
+   }
+}
+
+.header__metro-text {
+   font-size: 1.1rem;
+   line-height: 5px;
+}
+
 .menu {
+   &__mobile {
+      display: none;
+   }
    display: flex;
    background: rgba(0, 0, 0, .2);
    border-radius: 15px;
@@ -252,7 +245,6 @@ header {
    }
 
    &__item {
-      padding: 5px;
       border-radius: 10px;
       
       &:hover {
@@ -276,7 +268,7 @@ header {
    &__title {
       padding-left: 30px;
       height: 100%;
-      width: 233px;
+      width: 180px;
       background-color: $bluetext;
       position: relative;
       border-radius: 15px 0 0 15px;
@@ -337,11 +329,54 @@ header {
       padding: 10px;
       padding-left: 20px;
    }
-   &__burger {
-      display: none;
-   }
 }
 
 .menu__link-add:hover>.menu__add {
    display: block;
+}
+
+.header__mobile {
+   display: none;
+}
+
+.ham {
+   cursor: pointer;
+   -webkit-tap-highlight-color: transparent;
+   transition: transform 400ms;
+   -moz-user-select: none;
+   -webkit-user-select: none;
+   -ms-user-select: none;
+   user-select: none;
+}
+
+.hamRotate.active {
+   transform: rotate(45deg);
+}
+
+.line {
+   fill: none;
+   transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
+   stroke: #fff;
+   stroke-width: 7.5;
+   stroke-linecap: round;
+}
+
+.ham1 .top {
+   stroke-dasharray: 40 139;
+}
+
+.ham1 .bottom {
+   stroke-dasharray: 40 180;
+}
+
+.ham1.active .top {
+   stroke-dashoffset: -98px;
+}
+
+.ham1.active .bottom {
+   stroke-dashoffset: -138px;
+}
+
+.menu {
+   transition: 5s ease-in-out;
 }

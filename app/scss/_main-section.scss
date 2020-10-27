@@ -1,11 +1,24 @@
-
-
-
 .main-section {
   display: flex;
   justify-content: space-between;
-  max-width: 1170px;
-  
+}
+
+.slider {
+  max-width: 65%;
+  min-width: 0;
+  &__item {
+    img {
+      width: 100%;
+    }
+  }
+}
+
+.slick-track {
+  display: flex;
+}
+
+.slick-list {
+  overflow: hidden;
 }
 
 .service {
@@ -17,42 +30,10 @@
     margin-bottom: 30px;
     display: flex;
     justify-content: space-between;
-    
-    padding: 18px;
-    
-    
-
+    padding: 5% 1%;
     &:hover .service__img {
       background-image: url(../img/icon/screen_hover.png);
     }
-
-    // &:hover {
-    //   background: linear-gradient(rgb(255, 255, 255), rgb(255, 255, 255)) padding-box,
-    //   linear-gradient( #a0be1a, #499adc) border-box;
-    //   // border-top: 3px solid transparent;
-    //   border-radius: 10px;
-    //   transition: 400ms linear;
-    //   animation-name: border;
-    //   animation-duration: 1s;
-    //   animation-timing-function: linear;
-    //   animation-iteration-count: infinite;
-    //   @keyframes border {
-    //     0% {
-    //       border-top: 3px solid transparent;
-    //     }
-    //     33% {
-    //       border-right: 3px solid transparent;
-    //       background: linear-gradient(rgb(255, 255, 255), rgb(255, 255, 255)) padding-box,
-    //       linear-gradient(to left bottom, #499adc, #a0be1a) border-box;
-    //     }
-    //     66% {
-    //       border-bottom: 3px solid transparent;
-    //     }
-    //     100% {
-    //       border-left: 3px solid transparent;
-    //     }
-    //   }
-    // }
   }
 
   &__title {
@@ -70,6 +51,7 @@
   }
 
   &__img {
+    margin-right: 10px;
     width: 70px;
     height: 70px;
     background-image: url(../img/icon/screen.png);
@@ -77,3 +59,4 @@
     background-size: cover;
   }
 }
+

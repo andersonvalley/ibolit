@@ -4,6 +4,11 @@
 @import "main-section";
 @import "select-device";
 @import "header";
+@import "model";
+@import "price";
+@import "promo";
+@import "footer";
+@import "slider";
 
 html {
    box-sizing: border-box;
@@ -13,6 +18,7 @@ body {
    font-size: 16px;
    font-family: 'Museo Sans Cyrl';
    // border: 3px solid red;
+   box-sizing: border-box;
 }
 ul,
 li {

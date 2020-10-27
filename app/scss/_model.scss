@@ -1,0 +1,124 @@
+.device {
+  
+  &__header {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__text {
+    max-width: 700px;
+    color: $colortext;
+  }
+  &__subtitle {
+    font-size: 1.2rem;
+  }
+  &__title {
+    white-space: nowrap;
+    font-size: 3.2rem;
+    font-weight: 700;
+  }
+  &__wrapper {
+    display: flex;
+    align-items: center;
+  }
+  &__cost {
+    // border: 10px solid transparent;
+    // border-image: linear-gradient(to right, #dbe667 0, #63a52e 100%);
+    // border-image-slice: 1;
+    // border-radius: 15px;
+    background: linear-gradient(to right, #aa076b, #61045f);
+    border-radius: 15px;
+    display: inline-block;
+    font-size: 15px;
+    padding: 1px;
+    p {
+      color: $colortext;
+      font-weight: 300;
+      position: relative;
+      padding-left: 60px;
+      padding-right: 10px;
+      line-height: 3px;
+      &::before {
+        content: "";
+        position: absolute;
+        background-image: url('../img/icon/wallet.svg');
+        width: 35px;
+        height: 35px;
+        left: 12px;
+        top: 10px;
+        z-index: 20;
+      }
+    }
+    span {
+      color: $colortext;
+      font-weight: 500;
+      font-size: 1.9rem;
+      padding-left: 60px;
+      display: block;
+      padding-bottom: 5px;
+    }
+  }
+  &__wrapper {
+    margin-top: 60px;
+  }
+  &__time {
+    margin-left: 30px;
+    background: linear-gradient(to right, #aa076b, #61045f);
+    border-radius: 15px;
+    display: inline-block;
+    font-size: 15px;
+    padding: 1px;
+    p {
+      color: $colortext;
+      font-weight: 300;
+      position: relative;
+      padding-left: 60px;
+      padding-right: 10px;
+      line-height: 3px;
+
+      &::before {
+        content: "";
+        position: absolute;
+        background-image: url('../img/icon/time.svg');
+        width: 35px;
+        height: 35px;
+        left: 12px;
+        top: 10px;
+        z-index: 20;
+      }
+    }
+
+    span {
+      color: $colortext;
+      font-weight: 500;
+      font-size: 1.9rem;
+      padding-left: 60px;
+      display: block;
+      padding-bottom: 5px;
+    }
+  }
+  &__btn {
+    background-color: #000;
+    color: #fff;
+    border-radius: 10px;
+    margin-bottom: 80px;
+    padding: 10px 15px;
+    margin-top: 40px;
+    display: inline-block;
+    background: linear-gradient(333deg, rgba(94, 27, 166, 1) 0%, rgba(138, 14, 39, 1) 100%);
+    &:hover {
+      background: linear-gradient(333deg, rgb(77, 22, 136) 0%, rgb(109, 11, 30) 100%);
+    }
+  }
+  
+  &__img {
+    margin-top: 60px;
+    margin-right: 50px;
+  }
+}
+.cost-cost {
+  
+  background: #fff;
+  display: block;
+  padding: 0.1rem 0.1rem;
+  border-radius: 15px;
+}
